@@ -61,10 +61,10 @@
                                     </div>
                                     <div class="collapse navbar-collapse js-navbar-collapse">
                                        <ul class="nav navbar-nav">
-                                          <li class="active"><a href="index.html">Home</a></li>
-                                          <li><a href="about.html">About</a></li>
-                                          <li><a href="team.html">Team</a></li>
-                                          <li><a href="news.html">News</a></li>
+                                          <li class="active"><a href="{% url 'sports:home' %}">Home</a></li>
+                                          <li><a href="{% url 'sports:about-page' %}">About</a></li>
+                                          <li><a href="{% url 'sports:team-page' %}">Team</a></li>
+                                          <li><a href="{% url 'sports:news-page' %}">News</a></li>
                                           <li class="dropdown mega-dropdown">
                                              <a href="match" class="dropdown-toggle" data-toggle="dropdown">Match<span class="caret"></span></a>
                                              <ul class="dropdown-menu mega-dropdown-menu">
@@ -115,21 +115,23 @@
                                                 </li>
                                              </ul>
                                           </li>
-                                          <li><a href="blog.html">Blog</a></li>
-                                          <li><a href="contact.html">contact</a></li>
+                                          <li><a href="{% url 'sports:blog-page' %}">Blog</a></li>
+                                          <li><a href="{% url 'sports:contact-page' %}">contact</a></li>
                                        </ul>
                                     </div>
                                     <!-- /.nav-collapse -->
                                  </nav>
                                  <div class="search-bar">
-                                    <div id="imaginary_container">
-                                       <div class="input-group stylish-input-group">
-                                          <input type="text" class="form-control"  placeholder="Search" >
-                                          <span class="input-group-addon">
-                                          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                                          </span>
-                                       </div>
-                                    </div>
+                                    <form action="{% url 'sports:searchresult-page' %}">
+                                        <div id="imaginary_container">
+                                           <div class="input-group stylish-input-group">
+                                              <input type="text" class="form-control"name="f" placeholder="search" >
+                                              <span class="input-group-addon">
+                                              <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                              </span>
+                                           </div>
+                                        </div>
+                                   </form>
                                  </div>
                               </div>
                            </div>
